@@ -2,7 +2,7 @@ import { Github, Linkedin } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="flex justify-between">
+    <header className="flex justify-between items-center mt-4">
       <h1>jeffwilliams</h1>
       <ul className="flex gap-4">
         <li>
