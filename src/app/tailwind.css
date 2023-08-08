@@ -71,7 +71,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply container bg-background text-foreground;
   }
   h1,
   h2,

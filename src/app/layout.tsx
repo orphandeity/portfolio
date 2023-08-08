@@ -3,6 +3,7 @@ import './tailwind.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ModeToggle } from '@/components/ui/mode-toggle'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,8 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <header className="flex justify-between">
-            <strong>jeffwilliams</strong>
+          <header className="mt-2 flex items-center justify-between">
+            <Link href={'/'}>
+              <strong>jeffwilliams</strong>
+            </Link>
             <ModeToggle />
           </header>
           {children}
