@@ -19,6 +19,8 @@ import Image from 'next/image'
 import photo from '@/assets/8583_PNG.png'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import SkillsList from '@/components/skills-list'
+import SkillListElement from '@/components/skill-list-element'
 
 export default function Home() {
   return (
@@ -64,60 +66,59 @@ export default function Home() {
 
       <section className="container">
         <h2>Skills</h2>
-        <h3 className="text-muted-foreground">Languages</h3>
-        <ul className="mb-8 flex justify-between">
-          <li className="w-8">
-            <Html />
-          </li>
-          <li className="w-8">
-            <Css />
-          </li>
-          <li className="w-8">
-            <Sass />
-          </li>
-          <li className="w-8">
-            <Javascript />
-          </li>
-          <li className="w-8">
-            <Typescript />
-          </li>
-        </ul>
-        <h3 className="text-muted-foreground">Frameworks</h3>
-        <ul className="mb-8 flex justify-between">
-          <li className="w-8">
-            <React />
-          </li>
-          <li className="w-8">
-            <Next />
-          </li>
-          <li className="w-8">
-            <Svelte />
-          </li>
-          <li className="w-8">
-            <Express />
-          </li>
-          <li className="w-8">
-            <Node />
-          </li>
-        </ul>
-        <h3 className="text-muted-foreground">Tools</h3>
-        <ul className="flex justify-between">
-          <li className="w-8">
-            <Git />
-          </li>
-          <li className="w-8">
-            <Github />
-          </li>
-          <li className="w-8">
-            <Mysql />
-          </li>
-          <li className="w-8">
-            <Postgres />
-          </li>
-          <li className="w-8">
-            <Figma />
-          </li>
-        </ul>
+        <div className="space-y-8">
+          <SkillsList heading="Languages">
+            <SkillListElement name="HTML">
+              <Html />
+            </SkillListElement>
+            <SkillListElement name="CSS">
+              <Css />
+            </SkillListElement>
+            <SkillListElement name="Sass">
+              <Sass />
+            </SkillListElement>
+            <SkillListElement name="JavaScript">
+              <Javascript />
+            </SkillListElement>
+            <SkillListElement name="TypeScript">
+              <Typescript />
+            </SkillListElement>
+          </SkillsList>
+          <SkillsList heading="Frameworks">
+            <SkillListElement name="React">
+              <React />
+            </SkillListElement>
+            <SkillListElement name="Next">
+              <Next />
+            </SkillListElement>
+            <SkillListElement name="Svelte">
+              <Svelte />
+            </SkillListElement>
+            <SkillListElement name="Express">
+              <Express />
+            </SkillListElement>
+            <SkillListElement name="Node">
+              <Node />
+            </SkillListElement>
+          </SkillsList>
+          <SkillsList heading="Tools">
+            <SkillListElement name="Git">
+              <Git />
+            </SkillListElement>
+            <SkillListElement name="GitHub">
+              <Github />
+            </SkillListElement>
+            <SkillListElement name="MySQL">
+              <Mysql />
+            </SkillListElement>
+            <SkillListElement name="PostgreSQL">
+              <Postgres />
+            </SkillListElement>
+            <SkillListElement name="Figma">
+              <Figma />
+            </SkillListElement>
+          </SkillsList>
+        </div>
       </section>
 
       <Projects />

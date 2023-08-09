@@ -75,12 +75,6 @@
     @apply leading-7;
   }
   small {
-    @apply text-sm font-medium leading-none;
+    @apply text-xs leading-none;
   }
 }
-
-/* @layer utilities {
-  .container {
-    @apply xs:max-w-[640px] sm:max-w-[768px];
-  }
-} */
