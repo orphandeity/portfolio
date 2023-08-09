@@ -1,3 +1,4 @@
+import { ContactForm } from '@/components/ui/contact-form'
 import Link from 'next/link'
 
 export default function Home() {
@@ -45,7 +46,7 @@ export default function Home() {
       <h3>Galleria Slideshow Site</h3>
       <h3>Planets Fact Site</h3>
       <h2>Contact</h2>
-      {/* TODO email contact form */}
+      <ContactForm />
     </main>
   )
 }
