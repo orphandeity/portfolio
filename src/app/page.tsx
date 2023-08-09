@@ -23,45 +23,46 @@ import { Button } from '@/components/ui/button'
 export default function Home() {
   return (
     <main className="space-y-20">
-      <div>
-        <figure className="relative mb-32">
-          <div className="relative mx-auto max-w-sm before:absolute before:inset-0 before:bg-gradient-to-t before:from-background before:to-transparent before:to-30%">
-            <Image src={photo} alt="" />
+      <div className="container">
+        <figure className="relative mb-12 sm:mb-8">
+          <div className="relative mx-auto max-w-sm translate-x-1/3 before:absolute before:inset-0 before:bg-gradient-to-t before:from-background before:to-transparent before:to-30% sm:ml-auto sm:mr-0 sm:translate-x-12">
+            <Image src={photo} alt="" priority />
           </div>
-          <figcaption className="absolute -bottom-28">
+          <figcaption className="absolute -bottom-8 max-w-xs xs:max-w-sm sm:bottom-0">
             <h1>
               Hi! I&apos;m Jeff...
               <br />
-              <span className="text-primary">Web Developer</span>,
-              <br />
-              Musician and
+              <span className="text-primary">Web Developer</span>, Musician and
               <br />
               Cat Lover.
             </h1>
           </figcaption>
         </figure>
-        <p className="text-xl text-muted-foreground">
-          I build dynamic web experiences that people love to use. You can read
-          a bit more{' '}
-          <Link
-            href={'about-me'}
-            className="underline decoration-primary underline-offset-4"
-          >
-            about me
-          </Link>{' '}
-          or check out some things I&apos;ve made.
-        </p>
-        <div className="mt-12 flex justify-between gap-4">
-          <Button size={'lg'} className="w-full" asChild>
-            <Link href={'#projects'}>Projects</Link>
-          </Button>
-          <Button size={'lg'} className="w-full" asChild>
-            <Link href={'#contact'}>Contact</Link>
-          </Button>
+
+        <div className="space-y-4 sm:space-y-8">
+          <p className="text-lg text-muted-foreground">
+            I build dynamic web experiences that people love to use. You can
+            read a bit more{' '}
+            <Link
+              href={'about-me'}
+              className="underline decoration-primary decoration-2 underline-offset-4"
+            >
+              about me
+            </Link>{' '}
+            or check out some things I&apos;ve made.
+          </p>
+          <div className="flex justify-between gap-4 sm:gap-8">
+            <Button className="w-full" asChild>
+              <Link href={'#projects'}>Projects</Link>
+            </Button>
+            <Button className="w-full" asChild>
+              <Link href={'#contact'}>Contact</Link>
+            </Button>
+          </div>
         </div>
       </div>
 
-      <section>
+      <section className="container">
         <h2>Skills</h2>
         <h3 className="text-muted-foreground">Languages</h3>
         <ul className="mb-8 flex justify-between">
@@ -121,7 +122,7 @@ export default function Home() {
 
       <Projects />
 
-      <section id="contact">
+      <section id="contact" className="container">
         <h2>Contact</h2>
         <ContactForm />
       </section>

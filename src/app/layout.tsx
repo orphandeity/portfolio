@@ -21,15 +21,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="container">
-            <header className="mt-2 flex items-center justify-between">
-              <Link href={'/'}>
-                <strong className="text-xl">jeffwilliams</strong>
-              </Link>
-              <ModeToggle />
-            </header>
-            {children}
-          </div>
+          <header className="container mt-2 flex items-center justify-between">
+            <Link href={'/'}>
+              <strong className="text-xl tracking-tight">jeffwilliams</strong>
+            </Link>
+            <ModeToggle />
+          </header>
+          {children}
         </ThemeProvider>
       </body>
     </html>

@@ -48,7 +48,10 @@ export default function Projects() {
   ]
 
   return (
-    <section id="projects">
+    <section
+      className="container bg-secondary py-4 text-secondary-foreground"
+      id="projects"
+    >
       <h2>Projects</h2>
       <ul className="flex flex-wrap gap-8">
         {projects.map((project) => (
