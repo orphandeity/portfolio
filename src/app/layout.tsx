@@ -24,7 +24,7 @@ export default function RootLayout({
           <div className="container">
             <header className="mt-2 flex items-center justify-between">
               <Link href={'/'}>
-                <strong>jeffwilliams</strong>
+                <strong className="text-xl">jeffwilliams</strong>
               </Link>
               <ModeToggle />
             </header>

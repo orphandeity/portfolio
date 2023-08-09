@@ -18,20 +18,23 @@ import { ContactForm } from '@/components/ui/contact-form'
 import Image from 'next/image'
 import photo from '@/assets/8583_PNG.png'
 import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 
 export default function Home() {
   return (
     <main className="space-y-20">
       <div>
-        <figure className="relative mb-20">
-          <div className="relative mx-auto before:absolute before:inset-0 before:bg-gradient-to-t before:from-background before:to-transparent before:to-30%">
+        <figure className="relative mb-32">
+          <div className="relative mx-auto max-w-sm before:absolute before:inset-0 before:bg-gradient-to-t before:from-background before:to-transparent before:to-30%">
             <Image src={photo} alt="" />
           </div>
-          <figcaption className="absolute -bottom-16">
+          <figcaption className="absolute -bottom-28">
             <h1>
-              Web Developer.
+              Hi! I&apos;m Jeff...
               <br />
-              Musician.
+              <span className="text-primary">Web Developer</span>,
+              <br />
+              Musician and
               <br />
               Cat Lover.
             </h1>
@@ -48,6 +51,14 @@ export default function Home() {
           </Link>{' '}
           or check out some things I&apos;ve made.
         </p>
+        <div className="mt-12 flex justify-between gap-4">
+          <Button size={'lg'} className="w-full" asChild>
+            <Link href={'#projects'}>Projects</Link>
+          </Button>
+          <Button size={'lg'} className="w-full" asChild>
+            <Link href={'#contact'}>Contact</Link>
+          </Button>
+        </div>
       </div>
 
       <section>
@@ -110,7 +121,7 @@ export default function Home() {
 
       <Projects />
 
-      <section>
+      <section id="contact">
         <h2>Contact</h2>
         <ContactForm />
       </section>

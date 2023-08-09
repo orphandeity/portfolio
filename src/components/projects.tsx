@@ -48,7 +48,7 @@ export default function Projects() {
   ]
 
   return (
-    <section>
+    <section id="projects">
       <h2>Projects</h2>
       <ul className="flex flex-wrap gap-8">
         {projects.map((project) => (
@@ -56,7 +56,7 @@ export default function Projects() {
             <Card className="max-w-md">
               <CardHeader>
                 <CardTitle>{project.name}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
+                {/* <CardDescription>{project.description}</CardDescription> */}
                 <ul className="flex flex-wrap gap-2">
                   {project.technologies.map((technology) => (
                     <li key={technology}>
@@ -75,18 +75,18 @@ export default function Projects() {
                 />
               </CardContent>
               <CardFooter>
-                <ul className="flex">
+                <ul className="flex w-full justify-between">
                   <li>
                     <Button variant={'link'} asChild>
-                      <a href={project.links.github} target="_blank">
-                        View code
+                      <a href={project.links.live} target="_blank">
+                        View demo
                       </a>
                     </Button>
                   </li>
                   <li>
                     <Button variant={'link'} asChild>
-                      <a href={project.links.live} target="_blank">
-                        View demo
+                      <a href={project.links.github} target="_blank">
+                        View code
                       </a>
                     </Button>
                   </li>
