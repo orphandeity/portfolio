@@ -83,10 +83,10 @@
     @apply text-4xl font-extrabold lg:text-5xl;
   }
   h2 {
-    @apply text-3xl font-semibold;
+    @apply mb-4 text-3xl font-semibold;
   }
   h3 {
-    @apply text-2xl font-semibold;
+    @apply mb-2 text-2xl font-semibold;
   }
   h4 {
     @apply text-xl font-semibold;
