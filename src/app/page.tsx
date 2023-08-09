@@ -15,19 +15,34 @@ import Sass from '@/components/svg/sass'
 import Svelte from '@/components/svg/svelte'
 import Typescript from '@/components/svg/typescript'
 import { ContactForm } from '@/components/ui/contact-form'
+import Image from 'next/image'
+import photo from '@/assets/8583_PNG.png'
 import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main>
+    <main className="space-y-20">
       <div>
-        <h1>Hi there! I&apos;m Jeff. Web Developer, Musician and Cat Lover.</h1>
+        <figure className="relative mb-20">
+          <div className="relative mx-auto before:absolute before:inset-0 before:bg-gradient-to-t before:from-background before:to-transparent before:to-30%">
+            <Image src={photo} alt="" />
+          </div>
+          <figcaption className="absolute -bottom-16">
+            <h1>
+              Web Developer.
+              <br />
+              Musician.
+              <br />
+              Cat Lover.
+            </h1>
+          </figcaption>
+        </figure>
         <p className="text-xl text-muted-foreground">
           I build dynamic web experiences that people love to use. You can read
           a bit more{' '}
           <Link
             href={'about-me'}
-            className="decoration-42 underline decoration-primary underline-offset-4"
+            className="underline decoration-primary underline-offset-4"
           >
             about me
           </Link>{' '}
@@ -37,57 +52,57 @@ export default function Home() {
 
       <section>
         <h2>Skills</h2>
-        <h3>Languages</h3>
-        <ul className="flex justify-between">
-          <li className="w-12">
+        <h3 className="text-muted-foreground">Languages</h3>
+        <ul className="mb-8 flex justify-between">
+          <li className="w-8">
             <Html />
           </li>
-          <li className="w-12">
+          <li className="w-8">
             <Css />
           </li>
-          <li className="w-12">
+          <li className="w-8">
             <Sass />
           </li>
-          <li className="w-12">
+          <li className="w-8">
             <Javascript />
           </li>
-          <li className="w-12">
+          <li className="w-8">
             <Typescript />
           </li>
         </ul>
-        <h3>Frameworks</h3>
-        <ul className="flex justify-between">
-          <li className="w-12">
+        <h3 className="text-muted-foreground">Frameworks</h3>
+        <ul className="mb-8 flex justify-between">
+          <li className="w-8">
             <React />
           </li>
-          <li className="w-12">
+          <li className="w-8">
             <Next />
           </li>
-          <li className="w-12">
+          <li className="w-8">
             <Svelte />
           </li>
-          <li className="w-12">
+          <li className="w-8">
             <Express />
           </li>
-          <li className="w-12">
+          <li className="w-8">
             <Node />
           </li>
         </ul>
-        <h3>Tools</h3>
+        <h3 className="text-muted-foreground">Tools</h3>
         <ul className="flex justify-between">
-          <li className="w-12">
+          <li className="w-8">
             <Git />
           </li>
-          <li className="w-12">
+          <li className="w-8">
             <Github />
           </li>
-          <li className="w-12">
+          <li className="w-8">
             <Mysql />
           </li>
-          <li className="w-12">
+          <li className="w-8">
             <Postgres />
           </li>
-          <li className="w-12">
+          <li className="w-8">
             <Figma />
           </li>
         </ul>

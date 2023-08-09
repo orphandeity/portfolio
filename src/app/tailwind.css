@@ -71,7 +71,7 @@
     @apply border-border;
   }
   body {
-    @apply container bg-background text-foreground;
+    @apply bg-background text-foreground;
   }
   h1,
   h2,
@@ -86,10 +86,7 @@
     @apply mb-4 text-3xl font-semibold;
   }
   h3 {
-    @apply mb-2 text-2xl font-semibold;
-  }
-  h4 {
-    @apply text-xl font-semibold;
+    @apply mb-2 text-xl font-semibold;
   }
   p {
     @apply leading-7;
