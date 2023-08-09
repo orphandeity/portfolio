@@ -1,17 +1,18 @@
-import Image from 'next/image'
-import { Badge } from './ui/badge'
-import { Button } from './ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from './ui/card'
+import ProjectCard from './project-card'
+
+export type ProjectType = {
+  name: string
+  description: string
+  technologies: string[]
+  screenshot: string
+  links: {
+    github: string
+    live: string
+  }
+}
 
 export default function Projects() {
-  let projects = [
+  let projects: ProjectType[] = [
     {
       name: 'Entertainment Web App',
       description:
@@ -53,49 +54,10 @@ export default function Projects() {
       id="projects"
     >
       <h2>Projects</h2>
-      <ul className="flex flex-wrap gap-8">
+      <ul className="flex flex-wrap justify-center gap-8">
         {projects.map((project) => (
           <li key={project.name}>
-            <Card className="max-w-md">
-              <CardHeader>
-                <CardTitle>{project.name}</CardTitle>
-                {/* <CardDescription>{project.description}</CardDescription> */}
-                <ul className="flex flex-wrap gap-2">
-                  {project.technologies.map((technology) => (
-                    <li key={technology}>
-                      <Badge variant={'secondary'}>{technology}</Badge>
-                    </li>
-                  ))}
-                </ul>
-              </CardHeader>
-
-              <CardContent>
-                <Image
-                  src={project.screenshot}
-                  width={1440}
-                  height={886}
-                  alt=""
-                />
-              </CardContent>
-              <CardFooter>
-                <ul className="flex w-full justify-between">
-                  <li>
-                    <Button variant={'link'} asChild>
-                      <a href={project.links.live} target="_blank">
-                        View demo
-                      </a>
-                    </Button>
-                  </li>
-                  <li>
-                    <Button variant={'link'} asChild>
-                      <a href={project.links.github} target="_blank">
-                        View code
-                      </a>
-                    </Button>
-                  </li>
-                </ul>
-              </CardFooter>
-            </Card>
+            <ProjectCard project={project} />
           </li>
         ))}
       </ul>

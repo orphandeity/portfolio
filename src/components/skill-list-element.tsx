@@ -8,7 +8,7 @@ export default function SkillListElement({
   children,
 }: SkillListElementProps) {
   return (
-    <li className="flex flex-col items-center justify-center gap-1">
+    <li className="flex flex-col items-center justify-center gap-2">
       <small className="">{name}</small>
       <div className="w-8">{children}</div>
     </li>
