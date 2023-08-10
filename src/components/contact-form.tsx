@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import * as z from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -16,7 +15,8 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { Textarea } from './textarea'
+import { Textarea } from './ui/textarea'
+import { toast } from './ui/use-toast'
 
 const formSchema = z.object({
   name: z
@@ -26,6 +26,8 @@ const formSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email address.' }),
   message: z.string().min(10, { message: 'Please enter a message.' }),
 })
+
+export type ContactFormValues = z.infer<typeof formSchema>
 
 export function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -37,10 +39,27 @@ export function ContactForm() {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-checked and validated.
-    console.log(values)
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    })
+
+    const response = await res.json()
+    console.log(response)
+
+    toast({
+      title: 'Message sent',
+      description: 'Thanks for reaching out! I will get back to you soon.',
+    })
+
+    form.reset()
   }
 
   return (
@@ -55,7 +74,6 @@ export function ContactForm() {
               <FormControl>
                 <Input {...field} />
               </FormControl>
-              <FormDescription>What&apos;s your name?</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -69,9 +87,6 @@ export function ContactForm() {
               <FormControl>
                 <Input {...field} />
               </FormControl>
-              <FormDescription>
-                Where would you like me to send a reply?
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -83,11 +98,8 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Textarea {...field} />
+                <Textarea className="resize-none" {...field} />
               </FormControl>
-              <FormDescription>
-                I&apos;m looking forward to hearing from you!
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

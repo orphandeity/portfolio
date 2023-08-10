@@ -18,7 +18,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <ul className="flex items-center gap-2">
           {technologies.map((technology) => (
             <li key={technology}>
-              <Badge>{technology}</Badge>
+              <Badge variant={'outline'}>{technology}</Badge>
             </li>
           ))}
         </ul>

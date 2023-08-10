@@ -14,7 +14,7 @@ import React from '@/components/svg/react'
 import Sass from '@/components/svg/sass'
 import Svelte from '@/components/svg/svelte'
 import Typescript from '@/components/svg/typescript'
-import { ContactForm } from '@/components/ui/contact-form'
+import { ContactForm } from '@/components/contact-form'
 import Image from 'next/image'
 import photo from '@/assets/8583_PNG.png'
 import Link from 'next/link'
@@ -26,11 +26,11 @@ export default function Home() {
   return (
     <main className="space-y-20">
       <div className="container">
-        <figure className="relative mb-12 sm:mb-8">
-          <div className="relative mx-auto max-w-sm translate-x-1/3 before:absolute before:inset-0 before:bg-gradient-to-t before:from-background before:to-transparent before:to-30% sm:ml-auto sm:mr-0 sm:translate-x-12">
+        <figure className="relative mb-12 xs:mb-8">
+          <div className="relative mx-auto max-w-xs translate-x-1/3 before:absolute before:inset-0 before:bg-gradient-to-t before:from-background before:to-transparent before:to-30% xs:ml-auto xs:mr-0 xs:max-w-sm">
             <Image src={photo} alt="" priority />
           </div>
-          <figcaption className="absolute -bottom-8 max-w-xs xs:max-w-sm sm:bottom-0">
+          <figcaption className="absolute -bottom-8 max-w-xs xs:bottom-0 xs:max-w-sm">
             <h1>
               Hi! I&apos;m Jeff...
               <br />
@@ -41,7 +41,7 @@ export default function Home() {
           </figcaption>
         </figure>
 
-        <div className="space-y-4 sm:space-y-8">
+        <div className="space-y-4 xs:space-y-8">
           <p className="text-lg text-muted-foreground">
             I build dynamic web experiences that people love to use. You can
             read a bit more{' '}
@@ -53,7 +53,7 @@ export default function Home() {
             </Link>{' '}
             or check out some things I&apos;ve made.
           </p>
-          <div className="flex justify-between gap-4 sm:gap-8">
+          <div className="flex justify-between gap-4 xs:gap-8">
             <Button className="w-full" asChild>
               <Link href={'#projects'}>Projects</Link>
             </Button>
@@ -123,7 +123,7 @@ export default function Home() {
 
       <Projects />
 
-      <section id="contact" className="container">
+      <section id="contact" className="container py-4">
         <h2>Contact</h2>
         <ContactForm />
       </section>

@@ -49,18 +49,17 @@ export default function Projects() {
   ]
 
   return (
-    <section
-      className="container bg-secondary py-4 text-secondary-foreground"
-      id="projects"
-    >
-      <h2>Projects</h2>
-      <ul className="flex flex-wrap justify-center gap-8">
-        {projects.map((project) => (
-          <li key={project.name}>
-            <ProjectCard project={project} />
-          </li>
-        ))}
-      </ul>
+    <section className="bg-primary py-4 text-primary-foreground" id="projects">
+      <div className="container">
+        <h2>Projects</h2>
+        <ul className="flex flex-wrap justify-center gap-8">
+          {projects.map((project) => (
+            <li key={project.name}>
+              <ProjectCard project={project} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   )
 }
