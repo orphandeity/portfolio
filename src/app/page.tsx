@@ -47,7 +47,7 @@ export default function Home() {
             read a bit more{' '}
             <Link
               href={'about-me'}
-              className="underline decoration-primary decoration-2 underline-offset-4"
+              className="underline decoration-primary decoration-2 underline-offset-4 transition-colors focus-visible:text-primary focus-visible:outline-none"
             >
               about me
             </Link>{' '}

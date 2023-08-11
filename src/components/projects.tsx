@@ -49,7 +49,21 @@ export default function Projects() {
   ]
 
   return (
-    <section className="bg-primary py-4 text-primary-foreground" id="projects">
+    <section className="bg-primary text-primary-foreground" id="projects">
+      <svg
+        id="visual"
+        viewBox="0 0 900 150"
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+      >
+        <rect x="0" y="0" className="fill-primary"></rect>
+        <path
+          d="M0 84L37.5 73.5C75 63 150 42 225 37.5C300 33 375 45 450 54.5C525 64 600 71 675 71C750 71 825 64 862.5 60.5L900 57L900 0L862.5 0C825 0 750 0 675 0C600 0 525 0 450 0C375 0 300 0 225 0C150 0 75 0 37.5 0L0 0Z"
+          className="fill-background"
+          stroke-linecap="round"
+          stroke-linejoin="miter"
+        ></path>
+      </svg>
       <div className="container">
         <h2>Projects</h2>
         <ul className="flex flex-wrap justify-center gap-8">
@@ -60,6 +74,19 @@ export default function Projects() {
           ))}
         </ul>
       </div>
+      <svg
+        id="visual"
+        viewBox="0 0 900 150"
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+      >
+        <path
+          d="M0 132L37.5 123.8C75 115.7 150 99.3 225 91C300 82.7 375 82.3 450 87.3C525 92.3 600 102.7 675 107C750 111.3 825 109.7 862.5 108.8L900 108L900 151L862.5 151C825 151 750 151 675 151C600 151 525 151 450 151C375 151 300 151 225 151C150 151 75 151 37.5 151L0 151Z"
+          className="fill-background"
+          stroke-linecap="round"
+          stroke-linejoin="miter"
+        ></path>
+      </svg>
     </section>
   )
 }

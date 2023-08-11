@@ -23,7 +23,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <header className="container mt-2 flex items-center justify-between">
-            <Link href={'/'}>
+            <Link
+              href={'/'}
+              className="transition-colors focus-visible:text-primary focus-visible:outline-none"
+            >
               <strong className="text-xl tracking-tight">jeffwilliams</strong>
             </Link>
             <ModeToggle />
