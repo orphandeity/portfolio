@@ -1,6 +1,13 @@
 import Image from 'next/image'
 import type { ProjectType } from './projects'
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from './ui/card'
 import { Button } from './ui/button'
 import { Badge } from './ui/badge'
 
@@ -12,7 +19,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const { name, description, technologies, screenshot, links } = project
 
   return (
-    <Card className="max-w-sm">
+    <Card className="max-w-sm shadow-lg shadow-neutral-950/40 lg:flex lg:h-64 lg:max-w-5xl">
       <CardHeader>
         <CardTitle>{name}</CardTitle>
         <ul className="flex items-center gap-2">

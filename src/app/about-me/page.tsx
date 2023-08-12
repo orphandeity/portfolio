@@ -1,6 +1,6 @@
 export default function AboutMe() {
   return (
-    <main className="container">
+    <main className="container max-w-lg">
       <h1 className="mb-4 mt-8">About me</h1>
       <div className="space-y-4">
         <p>

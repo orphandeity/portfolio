@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <header className="container mt-2 flex items-center justify-between">
+          <header className="container mt-2 flex max-w-lg items-center justify-between">
             <Link
               href={'/'}
               className="transition-colors focus-visible:text-primary focus-visible:outline-none"
@@ -33,7 +33,7 @@ export default function RootLayout({
             <ModeToggle />
           </header>
           {children}
-          <footer className="flex flex-col items-center gap-2 bg-muted py-4 text-sm text-muted-foreground">
+          <footer className="mt-12 flex flex-col items-center gap-2 bg-muted py-4 text-sm text-muted-foreground">
             <p>designed and built by Jeff Williams</p>
             <menu className="flex items-center gap-8">
               <li>

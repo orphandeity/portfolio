@@ -25,7 +25,7 @@ import SkillListElement from '@/components/skill-list-element'
 export default function Home() {
   return (
     <main className="space-y-20">
-      <div className="container">
+      <div className="container max-w-lg">
         <figure className="relative mb-12 xs:mb-8">
           <div className="relative mx-auto max-w-xs translate-x-1/3 before:absolute before:inset-0 before:bg-gradient-to-t before:from-background before:to-transparent before:to-30% xs:ml-auto xs:mr-0 xs:max-w-sm">
             <Image src={photo} alt="" priority />
@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="container">
+      <section className="container max-w-lg">
         <h2>Skills</h2>
         <div className="space-y-8">
           <SkillsList heading="Languages">
@@ -108,14 +108,14 @@ export default function Home() {
             <SkillListElement name="GitHub">
               <Github />
             </SkillListElement>
+            <SkillListElement name="Figma">
+              <Figma />
+            </SkillListElement>
             <SkillListElement name="MySQL">
               <Mysql />
             </SkillListElement>
             <SkillListElement name="PostgreSQL">
               <Postgres />
-            </SkillListElement>
-            <SkillListElement name="Figma">
-              <Figma />
             </SkillListElement>
           </SkillsList>
         </div>
@@ -123,13 +123,15 @@ export default function Home() {
 
       <Projects />
 
-      <section id="contact" className="container py-4">
-        <h2>Contact</h2>
-        <p className="mb-4">
-          I&apos;m currently looking for new opportunities. If you&apos;d like
-          to get in touch, please fill out the form below.
-        </p>
-        <ContactForm />
+      <section id="contact" className="container flex flex-col items-center">
+        <div className="max-w-lg">
+          <h2>Contact</h2>
+          <p className="mb-4">
+            I&apos;m currently looking for new opportunities. If you&apos;d like
+            to get in touch, please fill out the form below.
+          </p>
+          <ContactForm />
+        </div>
       </section>
     </main>
   )

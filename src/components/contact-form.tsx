@@ -72,7 +72,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input className="shadow-sm" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -85,7 +85,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input className="shadow-sm" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -98,7 +98,11 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Textarea className="resize-none" {...field} />
+                <Textarea
+                  className="resize-none shadow-sm"
+                  rows={5}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
