@@ -24,10 +24,10 @@ import SkillListElement from '@/components/skill-list-element'
 
 export default function Home() {
   return (
-    <main className="space-y-20">
+    <main className="space-y-20 overflow-x-hidden">
       <div className="container max-w-lg">
         <figure className="relative mb-12 xs:mb-8">
-          <div className="relative mx-auto max-w-xs translate-x-1/3 before:absolute before:inset-0 before:bg-gradient-to-t before:from-background before:to-transparent before:to-30% xs:ml-auto xs:mr-0 xs:max-w-sm">
+          <div className="mx-auto max-w-xs translate-x-1/3 before:absolute before:inset-0 before:bg-gradient-to-t before:from-background before:to-transparent before:to-30% xs:ml-auto xs:mr-0 xs:max-w-sm">
             <Image src={photo} alt="" priority />
           </div>
           <figcaption className="absolute -bottom-8 max-w-xs xs:bottom-0 xs:max-w-sm">
