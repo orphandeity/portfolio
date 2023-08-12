@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import { ModeToggle } from '@/components/ui/mode-toggle'
 import Link from 'next/link'
 import { Toaster } from '@/components/ui/toaster'
+import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,6 +33,29 @@ export default function RootLayout({
             <ModeToggle />
           </header>
           {children}
+          <footer className="flex flex-col items-center gap-2 bg-muted py-4 text-sm text-muted-foreground">
+            <p>designed and built by Jeff Williams</p>
+            <menu className="flex items-center gap-8">
+              <li>
+                <Link
+                  href="https://github.com/orphandeity"
+                  target="_blank"
+                  className="transition-colors hover:opacity-75 focus-visible:text-primary focus-visible:outline-none"
+                >
+                  <GitHubLogoIcon className="h-8 w-8" />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://www.linkedin.com/in/orphandeity"
+                  target="_blank"
+                  className="transition-colors hover:opacity-75 focus-visible:text-primary focus-visible:outline-none"
+                >
+                  <LinkedInLogoIcon className="h-8 w-8" />
+                </Link>
+              </li>
+            </menu>
+          </footer>
           <Toaster />
         </ThemeProvider>
       </body>
