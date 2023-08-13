@@ -101,3 +101,9 @@
     @apply max-w-5xl;
   }
 }
+
+@layer utilities {
+  .bg-gradient {
+    @apply before:absolute before:inset-0 before:bg-gradient-to-t before:from-background before:to-transparent before:to-30%;
+  }
+}

@@ -34,7 +34,7 @@ export default function AboutMe() {
         </p>
         <p>
           I&apos;m seeking a full-time role where I can help a company achieve
-          its goals and grow as a crucial team member.
+          its goals and grow as a valued team member.
         </p>
       </div>
     </main>

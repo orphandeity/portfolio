@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <header className="container mt-2 flex max-w-lg items-center justify-between">
+          <header className="container mt-2 flex max-w-xl items-center justify-between">
             <Link
               href={'/'}
               className="transition-colors focus-visible:text-primary focus-visible:outline-none"

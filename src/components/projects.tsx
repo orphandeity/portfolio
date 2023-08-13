@@ -64,7 +64,7 @@ export default function Projects() {
           stroke-linejoin="miter"
         ></path>
       </svg>
-      <div className="container max-w-lg">
+      <div className="container max-w-xl">
         <h2>Projects</h2>
         <p className="mb-4">
           Here are some of the projects I&apos;ve worked on recently. Click on
