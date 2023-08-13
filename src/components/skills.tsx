@@ -19,7 +19,7 @@ import Typescript from '@/components/svg/typescript'
 
 export default function Skills() {
   return (
-    <section className="container max-w-xl">
+    <section className="container">
       <h2>Skills</h2>
       <div className="space-y-16">
         <SkillsList heading="Languages">
