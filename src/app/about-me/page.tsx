@@ -1,8 +1,11 @@
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+
 export default function AboutMe() {
   return (
-    <main className="container max-w-lg">
+    <main className="container">
       <h1 className="mb-4 mt-8">About me</h1>
-      <div className="space-y-4">
+      <div className="space-y-4 text-lg lg:columns-2">
         <p>
           Hi there! I&apos;m Jeff. I&apos;m an electronic musician who loves
           building things with code.
@@ -26,16 +29,21 @@ export default function AboutMe() {
         </p>
         <p>
           Since then, I&apos;ve been honing my skills and learning JavaScript. I
-          recently completed the Frontend Engineering Career Path certification
-          program at Codecademy and participated in a comprehensive series of
-          React workshops from Frontend Masters. I am always working on personal
+          completed the Frontend Engineering Career Path certification program
+          at Codecademy and participated in a comprehensive series of React
+          workshops from Frontend Masters. I am always working on personal
           projects to refine my skills and am determined to stay current within
           a quickly changing industry.
         </p>
         <p>
-          I&apos;m seeking a full-time role where I can help a company achieve
-          its goals and grow as a valued team member.
+          Currently, I am seeking a full-time role where I can help a company
+          achieve its goals and grow as a valued team member. If you are looking
+          to hire a developer, please feel free to reach out. I would love to
+          hear from you!
         </p>
+        <Button asChild>
+          <Link href={'/#contact'}>Contact me</Link>
+        </Button>
       </div>
     </main>
   )

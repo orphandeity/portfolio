@@ -16,10 +16,10 @@ module.exports = {
       },
     },
     extend: {
-      screens: {
-        xs: '425px',
-        sm: '525px',
-      },
+      // screens: {
+      //   xs: '414px',
+      //   sm: '600px',
+      // },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

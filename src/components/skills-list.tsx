@@ -5,9 +5,9 @@ interface SkillsListProps {
 
 export default function SkillsList({ heading, children }: SkillsListProps) {
   return (
-    <div className="">
+    <div className="lg:space-y-8 lg:text-center">
       <h3>{heading}</h3>
-      <ul className="flex max-w-lg justify-between text-muted-foreground">
+      <ul className="flex justify-between lg:mx-auto lg:w-60 lg:flex-wrap lg:justify-center lg:gap-16">
         {children}
       </ul>
     </div>

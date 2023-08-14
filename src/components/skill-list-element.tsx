@@ -18,7 +18,7 @@ export default function SkillListElement({
         'flex flex-col items-center justify-center gap-2 lg:col-span-2'
       )}
     >
-      <small className="">{name}</small>
+      <small>{name}</small>
       <div className="w-8">{children}</div>
     </li>
   )

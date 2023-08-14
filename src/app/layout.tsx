@@ -1,11 +1,11 @@
-import { ThemeProvider } from '@/components/theme-provider'
 import './tailwind.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { ModeToggle } from '@/components/ui/mode-toggle'
 import Link from 'next/link'
+import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
+import { ModeToggle } from '@/components/ui/mode-toggle'
 import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
+import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
