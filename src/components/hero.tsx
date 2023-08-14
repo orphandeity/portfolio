@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="container">
       <figure className="relative lg:flex lg:items-end">
-        <div className="absolute right-0 -z-10 mx-auto w-2/3 max-w-xs -translate-y-1/3 translate-x-16 before:absolute before:inset-0 before:bg-gradient-to-t before:from-background before:to-transparent before:to-30% sm:-translate-y-[40%] sm:translate-x-8 lg:relative lg:order-2 lg:max-w-none lg:translate-x-0 lg:translate-y-0">
+        <div className="absolute right-0 -z-10 mx-auto w-2/3 max-w-xs -translate-y-1/3 translate-x-16 before:absolute before:inset-0 before:bg-gradient-to-t before:from-background before:to-transparent before:to-30% sm:-translate-y-[40%] sm:translate-x-8 lg:relative lg:order-2 lg:max-w-md lg:translate-x-0 lg:translate-y-0">
           <Image src={photo} alt="" priority />
         </div>
         <figcaption className="mt-24 space-y-10 sm:mt-40 lg:mt-0 lg:max-w-md lg:translate-y-20">

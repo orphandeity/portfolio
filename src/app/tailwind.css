@@ -63,7 +63,7 @@
     @apply scroll-m-20 tracking-tight;
   }
   h1 {
-    @apply text-3xl font-extrabold sm:text-5xl lg:text-6xl;
+    @apply text-3xl font-extrabold sm:text-5xl lg:text-6xl lg:tracking-tighter;
   }
   h2 {
     @apply mb-4 text-3xl/none font-semibold lg:mb-8;
