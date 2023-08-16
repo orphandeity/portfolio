@@ -26,15 +26,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const isInView = useInView(ref, { once: true })
 
   useEffect(() => {
-    animate(
-      ref.current,
-      { opacity: [0, 1], y: [20, 0], scale: [0.75, 1] },
-      { duration: 0.5, delay: 0.15 }
-    )
+    animate(ref.current, { opacity: [0, 1], x: [40, 0] }, { duration: 0.7 })
   }, [isInView])
 
   return (
-    <Card ref={ref} className="max-w-sm shadow-lg shadow-neutral-950/40 ">
+    <Card ref={ref} className="max-w-sm shadow-lg shadow-neutral-950/40">
       <CardHeader>
         <CardTitle>{name}</CardTitle>
         <ul className="flex items-center gap-2">
