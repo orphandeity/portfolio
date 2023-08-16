@@ -43,7 +43,7 @@ export default function AboutMe() {
             looking to hire a developer, please feel free to reach out. I would
             love to hear from you!
           </p>
-          <Button asChild>
+          <Button size={'lg'} asChild>
             <Link href={'/#contact'}>Contact me</Link>
           </Button>
         </div>

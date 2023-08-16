@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import type { ProjectType } from './projects'
 import {
@@ -10,6 +12,8 @@ import {
 } from './ui/card'
 import { Button } from './ui/button'
 import { Badge } from './ui/badge'
+import { useEffect, useRef } from 'react'
+import { animate, useInView } from 'framer-motion'
 
 interface ProjectCardProps {
   project: ProjectType
@@ -18,8 +22,19 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const { name, description, technologies, screenshot, links } = project
 
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  useEffect(() => {
+    animate(
+      ref.current,
+      { opacity: [0, 1], y: [20, 0], scale: [0.75, 1] },
+      { duration: 0.5, delay: 0.15 }
+    )
+  }, [isInView])
+
   return (
-    <Card className="max-w-sm shadow-lg shadow-neutral-950/40 ">
+    <Card ref={ref} className="max-w-sm shadow-lg shadow-neutral-950/40 ">
       <CardHeader>
         <CardTitle>{name}</CardTitle>
         <ul className="flex items-center gap-2">

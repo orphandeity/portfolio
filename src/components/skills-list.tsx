@@ -13,7 +13,7 @@ export default function SkillsList({ heading, children }: SkillsListProps) {
   const isInView = useInView(ref, { once: true })
 
   useEffect(() => {
-    animate(ref.current, { opacity: [0, 1] }, { duration: 0.9 })
+    animate(ref.current, { opacity: [0, 1] }, { duration: 1 })
   }, [isInView])
 
   return (
