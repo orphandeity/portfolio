@@ -67,8 +67,8 @@ export default function Projects() {
       <div className="container">
         <h2>Projects</h2>
         <p className="mb-8 lg:mb-12">
-          Here are some of the projects I&apos;ve worked on recently. Click on
-          the project to view more info.
+          Here are some of the projects I&apos;ve worked on recently. Click on a
+          project to view more info.
         </p>
         <ul className="flex flex-wrap justify-center gap-8">
           {projects.map((project) => (

@@ -24,14 +24,14 @@ export default function Hero() {
 
           <p className="self-end text-xl">
             I build dynamic web experiences that people love to use. You can
-            read a bit more{' '}
+            read more{' '}
             <Link
               href={'about-me'}
               className="underline decoration-primary decoration-2 underline-offset-4 transition-colors focus-visible:text-primary focus-visible:outline-none"
             >
               about me
             </Link>{' '}
-            or check out some things I&apos;ve made.
+            or check out some of my work.
           </p>
           <div className="flex gap-4 sm:gap-8">
             <Button size={'lg'} className="col-start-2 w-full" asChild>

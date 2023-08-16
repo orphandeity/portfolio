@@ -22,10 +22,10 @@ export default function Skills() {
     <section className="container">
       <h2 className="lg:mt-60">Skills</h2>
       <p className="mb-8 lg:mb-12">
-        I have extensive experience in building web applications that are both
-        easy to maintain and scalable. My expertise in HTML, CSS, and JavaScript
-        allows me to quickly adapt to new technologies and frameworks, ensuring
-        that the applications I develop are always up-to-date and of the highest
+        I have extensive experience building web applications that are easy to
+        maintain and scalable. My expertise in HTML, CSS, and JavaScript allows
+        me to quickly adapt to new technologies and frameworks, ensuring that
+        the applications I develop are always up-to-date and of the highest
         quality.
       </p>
       <div className="space-y-16 lg:flex lg:justify-between lg:space-y-0">
