@@ -2,17 +2,20 @@ import Skills from '@/components/skills'
 import Projects from '@/components/projects'
 import Contact from '@/components/contact'
 import Hero from '@/components/hero'
+import Transition from '@/components/transition'
 
 export default function Home() {
   return (
-    <main className="space-y-20 overflow-x-hidden">
-      <Hero />
+    <Transition>
+      <main className="space-y-20 overflow-x-hidden">
+        <Hero />
 
-      <Skills />
+        <Skills />
 
-      <Projects />
+        <Projects />
 
-      <Contact />
-    </main>
+        <Contact />
+      </main>
+    </Transition>
   )
 }

@@ -1,11 +1,10 @@
 import './tailwind.css'
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
-import { ModeToggle } from '@/components/ui/mode-toggle'
-import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
-import { Inter } from 'next/font/google'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,39 +22,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <header className="container mt-2 flex items-center justify-between">
-            <Link
-              href={'/'}
-              className="transition-colors focus-visible:text-primary focus-visible:outline-none"
-            >
-              <strong className="text-xl tracking-tight">jeffwilliams</strong>
-            </Link>
-            <ModeToggle />
-          </header>
+          <Header />
           {children}
-          <footer className="mt-12 flex flex-col items-center gap-2 bg-muted py-4 text-sm text-muted-foreground">
-            <p>designed and built by Jeff Williams</p>
-            <menu className="flex items-center gap-8">
-              <li>
-                <Link
-                  href="https://github.com/orphandeity"
-                  target="_blank"
-                  className="transition-colors hover:opacity-75 focus-visible:text-primary focus-visible:outline-none"
-                >
-                  <GitHubLogoIcon className="h-8 w-8" />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.linkedin.com/in/orphandeity"
-                  target="_blank"
-                  className="transition-colors hover:opacity-75 focus-visible:text-primary focus-visible:outline-none"
-                >
-                  <LinkedInLogoIcon className="h-8 w-8" />
-                </Link>
-              </li>
-            </menu>
-          </footer>
+          <Footer />
           <Toaster />
         </ThemeProvider>
       </body>
