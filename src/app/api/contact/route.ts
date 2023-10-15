@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
   })
 
   let message = {
-    from: name,
+    from: `${name} <${email}>`,
     to: 'jrw1982@mac.com',
     subject: `Portfolio Website Message from ${name}`,
     html: `
