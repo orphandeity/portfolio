@@ -28,15 +28,14 @@ export async function POST(request: NextRequest) {
     `,
   }
 
-  transporter.sendMail(message, (error, info) => {
-    if (error) {
-      NextResponse.json({ error })
-    } else {
-      NextResponse.json({
-        message: 'Email sent successfully',
-        info: info.messageId,
-      })
-    }
+  await new Promise((resolve, reject) => {
+    transporter.sendMail(message, (error, info) => {
+      if (error) {
+        reject(error)
+      } else {
+        resolve(info)
+      }
+    })
   })
 
   return NextResponse.json({ message: 'Something went wrong.' })
