@@ -37,6 +37,7 @@ export async function POST(request: NextRequest) {
       }
     })
   })
-
-  return NextResponse.json({ message: 'Something went wrong.' })
+  NextResponse.json({
+    message: 'Email sent successfully.',
+  })
 }
