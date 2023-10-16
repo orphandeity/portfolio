@@ -21,12 +21,5 @@ export async function sendMail(name: string, email: string, content: string) {
     `,
   }
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      throw new Error(error.message)
-    } else {
-      console.log('Email sent: ' + info.messageId)
-      return true
-    }
-  })
+  transporter.sendMail(mailOptions)
 }
