@@ -10,5 +10,5 @@ export async function POST(request: NextRequest) {
 
   await sendMail(name, email, content)
 
-  NextResponse.json({ message: 'Email sent successfully.' })
+  return NextResponse.json({ message: 'Email sent successfully.' })
 }
