@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -24,36 +23,26 @@ const formSchema = z.object({
     .min(2, { message: 'Please enter a name with at least 2 characters.' })
     .max(50),
   email: z.string().email({ message: 'Please enter a valid email address.' }),
-  message: z.string().min(10, { message: 'Please enter a message.' }),
+  content: z.string().min(10, { message: 'Please enter a message.' }),
 })
 
 export type ContactFormValues = z.infer<typeof formSchema>
 
-export function ContactForm() {
+export function ContactForm({
+  action,
+}: {
+  action: (formData: FormData) => Promise<never>
+}) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
       email: '',
-      message: '',
+      content: '',
     },
   })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-checked and validated.
-
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(values),
-    })
-
-    const response = await res.json()
-    console.log(response)
-
     toast({
       title: 'Message sent',
       description: 'Thanks for reaching out! I will get back to you soon.',
@@ -64,7 +53,11 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form
+        action={action}
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-4"
+      >
         <FormField
           control={form.control}
           name="name"
@@ -93,7 +86,7 @@ export function ContactForm() {
         />
         <FormField
           control={form.control}
-          name="message"
+          name="content"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Message</FormLabel>
@@ -108,7 +101,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Send your message</Button>
+        <Button type="submit">Send message</Button>
       </form>
     </Form>
   )

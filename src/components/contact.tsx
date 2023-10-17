@@ -1,6 +1,21 @@
+import sendMail from '@/service/mailService'
 import { ContactForm } from './contact-form'
+import { redirect } from 'next/navigation'
 
 export default function Contact() {
+  const action = async (formData: FormData) => {
+    'use server'
+
+    let data = Object.fromEntries(formData.entries()) as Record<string, string>
+    let sent = await sendMail(data)
+
+    if (sent) {
+      redirect('/?success=true')
+    } else {
+      redirect('/?error=true')
+    }
+  }
+
   return (
     <section
       id="contact"
@@ -13,7 +28,7 @@ export default function Contact() {
           to get in touch, please fill out the form below.
         </p>
       </div>
-      <ContactForm />
+      <ContactForm action={action} />
     </section>
   )
 }
