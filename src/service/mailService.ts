@@ -25,13 +25,14 @@ export default async function sendMail({
     `,
   }
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error)
-      throw new Error(error.message)
-    } else {
-      return { info: info.messageId }
-    }
+  await new Promise((resolve, reject) => {
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        reject(error)
+      } else {
+        resolve(info.messageId)
+      }
+    })
   })
   return true
 }

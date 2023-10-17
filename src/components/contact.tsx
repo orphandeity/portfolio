@@ -7,6 +7,7 @@ export default function Contact() {
     'use server'
 
     let data = Object.fromEntries(formData.entries()) as Record<string, string>
+    console.log(data)
     let sent = await sendMail(data)
 
     if (sent) {
