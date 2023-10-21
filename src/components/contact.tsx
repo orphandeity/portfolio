@@ -6,13 +6,14 @@ export default function Contact() {
   const action = async (formData: FormData) => {
     'use server'
 
-    let data = Object.fromEntries(formData.entries()) as Record<string, string>
-    console.log(data)
-    try {
-      let sent = await sendMail(data)
+    let data = Object.fromEntries(formData.entries()) as Record<
+      'name' | 'email' | 'message',
+      string
+    >
 
-      if (sent === true) redirect('/?sent=true')
-      else redirect('/?sent=false')
+    try {
+      await sendMail(data)
+      redirect('/?sent=true')
     } catch (error) {
       console.error(error)
       redirect('/?error')
