@@ -8,12 +8,14 @@ export default function Contact() {
 
     let data = Object.fromEntries(formData.entries()) as Record<string, string>
     console.log(data)
-    let sent = await sendMail(data)
+    try {
+      let sent = await sendMail(data)
 
-    if (sent) {
-      redirect('/?success=true')
-    } else {
-      redirect('/?error=true')
+      if (sent === true) redirect('/?sent=true')
+      else redirect('/?sent=false')
+    } catch (error) {
+      console.error(error)
+      redirect('/?error')
     }
   }
 
